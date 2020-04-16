@@ -11,7 +11,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="131dp"
         android:src="@drawable/bills_logo_login"
         app:layout_constraintEnd_toEndOf="parent"
