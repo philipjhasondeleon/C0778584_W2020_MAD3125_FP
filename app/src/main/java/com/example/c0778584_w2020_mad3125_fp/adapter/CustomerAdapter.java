@@ -35,7 +35,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
     @Override
     public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
         Customer mCustomer = this.customersArrayList.get(position);
-        holder.txtName.setText(mCustomer.getFirstName());
+        holder.txtName.setText(mCustomer.getFull_name());
         holder.customerImage.setImageResource(mCustomer.getCustomerImg());
 
         holder.itemView.setOnClickListener(new View.OnClickListener()

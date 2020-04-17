@@ -12,6 +12,7 @@ public class Customer implements Parcelable {
     private String customerId;
     private String firstName;
     private String lastName;
+    private String fullName;
     private String gender;
     private String email;
     private String userName;
@@ -113,6 +114,14 @@ public class Customer implements Parcelable {
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
+    }
+
+    public String getFull_name() {
+        return lastName.toUpperCase()+","+firstName.toUpperCase();
+    }
+
+    public void setFull_name(String full_name) {
+        this.fullName = full_name;
     }
 
     public void addBill(String billId, Bill bill)
