@@ -2,9 +2,9 @@ package com.example.c0778584_w2020_mad3125_fp.model;
 
 public class Internet extends Bill {
     private String providerName;
-    private Double gbUsed;
+    private Integer gbUsed;
 
-    public Internet(String billId, String billDate, BillType billType, String providerName, Double gbUsed)
+    public Internet(String billId, String billDate, BillType billType, String providerName, Integer gbUsed)
     {
         super(billId, billDate, billType);
         this.providerName = providerName;
@@ -35,12 +35,12 @@ public class Internet extends Bill {
         this.providerName = providerName;
     }
 
-    public Double getGbUsed()
+    public Integer getGbUsed()
     {
         return gbUsed;
     }
 
-    public void setGbUsed(Double gbUsed)
+    public void setGbUsed(Integer gbUsed)
     {
         this.gbUsed = gbUsed;
     }

@@ -1,9 +1,8 @@
-package com.example.c0778584_w2020_mad3125_fp;
+package com.example.c0778584_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +11,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
+import com.example.c0778584_w2020_mad3125_fp.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -58,12 +59,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 loginPrefsEditor.putString("username", username);
                 loginPrefsEditor.putString("password", password);
                 loginPrefsEditor.commit();
-                // doSomethingElse();
+
             } else
             {
                 loginPrefsEditor.clear();
                 loginPrefsEditor.commit();
-                //    doSomethingElse();
+
             }
             goNext();
         }

@@ -1,4 +1,4 @@
-package com.example.c0778584_w2020_mad3125_fp;
+package com.example.c0778584_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.c0778584_w2020_mad3125_fp.R;
 import com.example.c0778584_w2020_mad3125_fp.adapter.CustomerAdapter;
 import com.example.c0778584_w2020_mad3125_fp.model.Customer;
 

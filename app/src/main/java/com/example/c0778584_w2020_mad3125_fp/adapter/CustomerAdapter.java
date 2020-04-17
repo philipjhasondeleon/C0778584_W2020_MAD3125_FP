@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0778584_w2020_mad3125_fp.R;
-import com.example.c0778584_w2020_mad3125_fp.ShowBillDetailsActivity;
+import com.example.c0778584_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
 import com.example.c0778584_w2020_mad3125_fp.model.Customer;
 
 import java.util.ArrayList;
