@@ -37,7 +37,7 @@ public class CustomerListActivity extends AppCompatActivity {
             customers = new ArrayList<>();
             customers.add(new Customer("1","Philip","DeLeon",
                     "Male","jhasondeleon@gmail.com","asd","asd","Wilson",
-                    "01/01/1991",R.drawable.bills_logo));
+                    "01/01/1991",R.drawable.person_male));
         }
 
     }
