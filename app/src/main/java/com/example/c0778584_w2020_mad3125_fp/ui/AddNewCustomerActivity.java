@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.c0778584_w2020_mad3125_fp.R;
+
 public class AddNewCustomerActivity extends AppCompatActivity {
 
     @Override
