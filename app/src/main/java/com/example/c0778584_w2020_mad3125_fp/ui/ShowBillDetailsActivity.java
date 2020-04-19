@@ -22,43 +22,43 @@ import java.util.ArrayList;
 
 
 public class ShowBillDetailsActivity extends AppCompatActivity {
-        FragmentManager mFragmentManager;
-        FragmentTransaction mFragmentTransaction;
-        private TextView txtTotalAmount;
-        private ImageView imgAddButton;
+    FragmentManager mFragmentManager;
+    FragmentTransaction mFragmentTransaction;
+    private TextView txtTotalAmount;
+    private ImageView imgAddButton;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_show_bill_details);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_show_bill_details);
 
-            Intent mIntent = getIntent();
-            Customer customerObj = mIntent.getParcelableExtra("CustomerBills");
+        Intent mIntent = getIntent();
+        Customer customerObj = mIntent.getParcelableExtra("CustomerBills");
 
-            ArrayList<Bill> bills = customerObj.getBills();
+        ArrayList<Bill> bills = customerObj.getBills();
 
-           // txtTotalAmount = findViewById(R.id.);
-            imgAddButton = findViewById(R.id.buttonAdd);
+        txtTotalAmount = findViewById(R.id.txtTotalAmount);
+        imgAddButton = findViewById(R.id.imgAddBill);
+//        imgAddButton.setImageResource(R.drawable.ic_action_addbill);
 
-            imgAddButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent mIntent = new Intent(ShowBillDetailsActivity.this, AddNewBillActivity.class);
-                    startActivity(mIntent);
-                }
-            });
+        imgAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(ShowBillDetailsActivity.this, AddNewBillActivity.class);
+                startActivity(mIntent);
+            }
+        });
 
+        //txtTotalAmount.setText(doubleFormatter(customerObj.getTotalAmount()));
+        //txtTotalAmount.setText(customerObj.getTotalAmount());
 
-            ActionBar mActionBar = getSupportActionBar();
-            mActionBar.hide();
+        ActionBar mActionBar = getSupportActionBar();
+        mActionBar.hide();
 
-            mFragmentManager = getSupportFragmentManager();
-            mFragmentTransaction = mFragmentManager.beginTransaction();
-            mFragmentTransaction.add(R.id.container, new BillFragment());
-            mFragmentTransaction.commit();
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.add(R.id.container, new BillFragment());
+        mFragmentTransaction.commit();
 
-
-        }
-
-
+    }
 }

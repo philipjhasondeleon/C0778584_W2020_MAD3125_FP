@@ -37,7 +37,6 @@ public class CustomerListActivity extends AppCompatActivity {
         populateCustomers();
 
         customerAdapter = new CustomerAdapter(customers);
-
         RecyclerView.LayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvCustomers.setLayoutManager(mLinearLayoutManager);
         rvCustomers.setAdapter(customerAdapter);
@@ -53,7 +52,6 @@ public class CustomerListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-
             case R.id.buttonAdd:
                 startActivity(new Intent(CustomerListActivity.this, AddNewCustomerActivity.class));
         }
