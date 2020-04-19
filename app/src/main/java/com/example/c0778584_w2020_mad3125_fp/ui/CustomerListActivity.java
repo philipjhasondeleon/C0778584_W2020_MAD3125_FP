@@ -1,5 +1,6 @@
 package com.example.c0778584_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,12 +30,14 @@ public class CustomerListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
+
         rvCustomers =findViewById(R.id.rv_cust_list);
 
         rvCustomers = findViewById(R.id.rv_cust_list);
         populateCustomers();
 
         customerAdapter = new CustomerAdapter(customers);
+
         RecyclerView.LayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvCustomers.setLayoutManager(mLinearLayoutManager);
         rvCustomers.setAdapter(customerAdapter);
@@ -50,9 +53,9 @@ public class CustomerListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
+
             case R.id.buttonAdd:
                 startActivity(new Intent(CustomerListActivity.this, AddNewCustomerActivity.class));
-                return true;
         }
         return true;
     }
@@ -68,3 +71,4 @@ public class CustomerListActivity extends AppCompatActivity {
     }
 
 }
+

@@ -27,7 +27,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
     @Override
     public CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.customer, parent, false);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_customer, parent, false);
         CustomerViewHolder mCustomerViewHolder = new CustomerViewHolder(mView);
         return mCustomerViewHolder;
     }
@@ -44,9 +44,9 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
             public void onClick(View view)
             {
                 Customer customer = customersArrayList.get(position);
-                Intent attractionIntent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-
-                attractionIntent.putExtra("CustomerBills", customer);
+                Intent mIntent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+                mIntent.putExtra("CustomerBills", customer);
+                holder.itemView.getContext().startActivity(mIntent);
             }
         });
     }
@@ -64,8 +64,8 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
 
         public CustomerViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.txtName = itemView.findViewById(R.id.textViewCustomerName);
-            this.customerImage = itemView.findViewById(R.id.imageViewCustomer);
+            this.txtName = itemView.findViewById(R.id.txt_customer_id);
+            this.customerImage = itemView.findViewById(R.id.img_customer);
         }
     }
 }
