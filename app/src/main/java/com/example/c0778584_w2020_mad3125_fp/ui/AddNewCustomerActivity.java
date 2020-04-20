@@ -142,5 +142,10 @@ public class AddNewCustomerActivity extends AppCompatActivity {
             Flag = true;
             return;
         }
+        if (edtEmailText.getText().toString().isEmpty()) {
+            edtEmailText.setError("Please enter your Email");
+            Flag = true;
+            return;
+        }
     }
 }
