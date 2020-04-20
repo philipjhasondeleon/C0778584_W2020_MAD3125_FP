@@ -23,33 +23,34 @@ public class DataSingleton {
     public void populateData()
     {
         Customer c1 = new Customer("C1","Philip","DeLeon",
-                "Male","jhasondeleon@gmail.com","asd","asd","Toronto",
+                "Male","jhasondeleon@gmail.com","Philip","asd123","Toronto",
                 "03/02/1997", R.drawable.person_male);
         Customer c2 = new Customer("C2","Karen","Sy",
-                "Female","karena@gmail.com","123","123","Scarborough",
-                "12/12/1998",R.drawable.person_female);
-        Mobile m1 = new Mobile("M01",
-                "3/10/2012",
+                "Female","karen@gmail.com","karen","karen123","Scarborough",
+                "12/24/1998", R.drawable.person_female);
+        Mobile m1 = new Mobile("M1",
+                "1/11/2020",
                 Bill.BillType.Mobile,
-                "SAMSUNG",
-                "All Canada Plan",
-                "8634750302",
-                3,
-                32);
-        Hydro h1 = new Hydro( "H01",
-                "10/5/2012",
+                "HUAWEI INC.",
+                "Unli Call All Day",
+                "8636781990",
+                21,
+                50);
+        Hydro h1 = new Hydro( "H1",
+                "5/19/2019",
                 Bill.BillType.Hydro,
-                "HydroCA",
-                16);
-        Internet in1 = new Internet("I01",
-                "10/6/2013",
+                "Waters",
+                9);
+        Internet in1 = new Internet("I1",
+                "8/23/2020",
                 Bill.BillType.Internet,
                 "Fido",
-                41);
-        c2.addBill("I01", in1);
-        c1.addBill("M01", m1);
-        c1.addBill("H01", h1);
+                19.4);
+        c2.addBill("I1", in1);
+        c1.addBill("M1", m1);
+        c1.addBill("H1", h1);
         customerMap.put(c1.getCustomerId(),c1);
         customerMap.put(c2.getCustomerId(),c2);
+
     }
 }

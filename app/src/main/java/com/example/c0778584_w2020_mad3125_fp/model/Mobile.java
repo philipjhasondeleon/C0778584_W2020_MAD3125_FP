@@ -1,7 +1,7 @@
 package com.example.c0778584_w2020_mad3125_fp.model;
 
-public class Mobile extends Bill
-{
+public class Mobile extends Bill {
+
     private String manufacturerName;
     private String planName;
     private String mobileNumber;
@@ -26,53 +26,43 @@ public class Mobile extends Bill
         return billAmount;
     }
 
-    public String getManufacturerName()
-    {
+    public String getManufacturerName() {
         return manufacturerName;
     }
 
-    public void setManufacturerName(String manufacturerName)
-    {
+    public void setManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
     }
 
-    public String getPlanName()
-    {
+    public String getPlanName() {
         return planName;
     }
 
-    public void setPlanName(String planName)
-    {
+    public void setPlanName(String planName) {
         this.planName = planName;
     }
 
-    public String getMobileNumber()
-    {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(String mobileNumber)
-    {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
-    public Integer getMobGbUsed()
-    {
+    public Integer getMobGbUsed() {
         return mobGbUsed;
     }
 
-    public void setMobGbUsed(Integer mobGbUsed)
-    {
+    public void setMobGbUsed(Integer mobGbUsed) {
         this.mobGbUsed = mobGbUsed;
     }
 
-    public Integer getMinute()
-    {
+    public Integer getMinute() {
         return minute;
     }
 
-    public void setMinute(Integer minute)
-    {
+    public void setMinute(Integer minute) {
         this.minute = minute;
     }
 }

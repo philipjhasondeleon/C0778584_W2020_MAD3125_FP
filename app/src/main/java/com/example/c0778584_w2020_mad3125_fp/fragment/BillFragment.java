@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.c0778584_w2020_mad3125_fp.R;
 import com.example.c0778584_w2020_mad3125_fp.model.Bill;
 import com.example.c0778584_w2020_mad3125_fp.model.Customer;
+import com.example.c0778584_w2020_mad3125_fp.util.DollarSign;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,7 @@ public class BillFragment extends Fragment {
     FragmentTransaction mFragmentTransaction;
 
     public BillFragment() {
+
     }
 
     @Override
@@ -51,6 +53,7 @@ public class BillFragment extends Fragment {
         txtBillId = getView().findViewById(R.id.txtBillId);
         txtBillDate = getView().findViewById(R.id.txtBillDate);
         txtBillAmount = getView().findViewById(R.id.txtBillAmount);
+        imgBillType = getView().findViewById(R.id.imgBillType);
 
         Intent mIntent = getActivity().getIntent();
         Customer customerObj = mIntent.getParcelableExtra("CustomerBills");
@@ -67,20 +70,27 @@ public class BillFragment extends Fragment {
             if(bills.get(i).getBillType().equals(Bill.BillType.Mobile))
             {
                 txtBillId.setText(bills.get(i).getBillId());
+                imgBillType.setImageResource(R.drawable.bills_logo);
+                txtBillAmount.setText(DollarSign.getInstance().doubleFormatter(bills.get(i).billCalculate()));
                 txtBillDate.setText(bills.get(i).getBillDate().toString());
             }
 
             if(bills.get(i).getBillType().equals(Bill.BillType.Hydro))
             {
                 txtBillId.setText(bills.get(i).getBillId());
+                imgBillType.setImageResource(R.drawable.bills_logo);
+                txtBillAmount.setText(DollarSign.getInstance().doubleFormatter(bills.get(i).billCalculate()));
                 txtBillDate.setText(bills.get(i).getBillDate().toString());
             }
 
             if(bills.get(i).getBillType().equals(Bill.BillType.Internet))
             {
                 txtBillId.setText(bills.get(i).getBillId());
+                imgBillType.setImageResource(R.drawable.bills_logo);
+                txtBillAmount.setText(DollarSign.getInstance().doubleFormatter(bills.get(i).billCalculate()));
                 txtBillDate.setText(bills.get(i).getBillDate().toString());
             }
         }
     }
 }
+

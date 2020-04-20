@@ -1,6 +1,6 @@
 package com.example.c0778584_w2020_mad3125_fp.model;
 
-public class Hydro extends Bill{
+public class Hydro extends Bill {
     private String agencyName;
     private Integer unitsUsed;
 
@@ -12,8 +12,7 @@ public class Hydro extends Bill{
     }
 
     @Override
-    public Double billCalculate()
-    {
+    public Double billCalculate(){
         double billAmount = 0.0;
         if (unitsUsed < 10)
         {
@@ -26,23 +25,19 @@ public class Hydro extends Bill{
         return billAmount;
     }
 
-    public String getAgencyName()
-    {
+    public String getAgencyName() {
         return agencyName;
     }
 
-    public void setAgencyName(String agencyName)
-    {
+    public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
 
-    public Integer getUnitsUsed()
-    {
+    public Integer getUnitsUsed() {
         return unitsUsed;
     }
 
-    public void setUnitsUsed(Integer unitsUsed)
-    {
+    public void setUnitsUsed(Integer unitsUsed) {
         this.unitsUsed = unitsUsed;
     }
 

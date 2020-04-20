@@ -23,13 +23,11 @@ public class Customer implements Parcelable {
     private Double allTotal;
     private int customerImg;
 
-    public String getGender()
-    {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(String gender)
-    {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -38,8 +36,7 @@ public class Customer implements Parcelable {
         return getGender().substring(0,1).toUpperCase();
     }
 
-    protected Customer(Parcel in)
-    {
+    protected Customer(Parcel in) {
         customerId = in.readString();
         firstName = in.readString();
         lastName = in.readString();
@@ -56,20 +53,17 @@ public class Customer implements Parcelable {
 
     public static final Creator<Customer> CREATOR = new Creator<Customer>() {
         @Override
-        public Customer createFromParcel(Parcel in)
-        {
+        public Customer createFromParcel(Parcel in) {
             return new Customer(in);
         }
 
         @Override
-        public Customer[] newArray(int size)
-        {
+        public Customer[] newArray(int size) {
             return new Customer[size];
         }
     };
 
-    public int getCustomerImg()
-    {
+    public int getCustomerImg() {
         return customerImg;
     }
 
@@ -96,23 +90,19 @@ public class Customer implements Parcelable {
         this.customerImg = customerImg;
     }
 
-    public String getFirstName()
-    {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName)
-    {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName()
-    {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName)
-    {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
@@ -129,89 +119,72 @@ public class Customer implements Parcelable {
         this.customerBills.put(billId, bill);
     }
 
-    public String getCustomerId()
-    {
+    public String getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId)
-    {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
-    public String getEmail()
-    {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email)
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getUserName()
-    {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName)
-    {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password)
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getLocation()
-    {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location)
-    {
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public String getDateOfBirth()
-    {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth)
-    {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public HashMap<String, Bill> getCustomerBills()
-    {
+    public HashMap<String, Bill> getCustomerBills() {
         return customerBills;
     }
 
-    public void setCustomerBills(HashMap<String, Bill> customerBills)
-    {
+    public void setCustomerBills(HashMap<String, Bill> customerBills) {
         this.customerBills = customerBills;
     }
 
-    public Double getAllTotal()
-    {
+    public Double getAllTotal() {
         return allTotal;
     }
 
-    public void setAllTotal(Double allTotal)
-    {
+    public void setAllTotal(Double allTotal) {
         this.allTotal = allTotal;
     }
 
     @Override
-    public int describeContents()
-    {
+    public int describeContents() {
         return 0;
     }
 

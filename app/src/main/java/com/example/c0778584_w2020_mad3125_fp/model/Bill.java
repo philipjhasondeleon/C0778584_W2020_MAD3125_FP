@@ -1,6 +1,9 @@
 package com.example.c0778584_w2020_mad3125_fp.model;
 
-public class Bill {
+import java.io.Serializable;
+
+public abstract class Bill implements Serializable {
+
     public enum BillType {
         Mobile,
         Hydro,
@@ -10,16 +13,13 @@ public class Bill {
     String billDate;
     BillType billType;
     Double billTotal = 0.0;
-
-    Bill(String billId, String billDate, BillType billType)
-    {
+    Bill(String billId, String billDate, BillType billType) {
         this.billId = billId;
         this.billDate = billDate;
         this.billType = billType;
     }
-
     public Double billCalculate(){
-        double Amount = 0.0;
+        Double Amount = 0.0;
         return Amount;
     }
 

@@ -7,8 +7,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,9 +15,9 @@ import com.example.c0778584_w2020_mad3125_fp.R;
 import com.example.c0778584_w2020_mad3125_fp.fragment.BillFragment;
 import com.example.c0778584_w2020_mad3125_fp.model.Bill;
 import com.example.c0778584_w2020_mad3125_fp.model.Customer;
+import com.example.c0778584_w2020_mad3125_fp.util.DollarSign;
 
 import java.util.ArrayList;
-
 
 public class ShowBillDetailsActivity extends AppCompatActivity {
     FragmentManager mFragmentManager;
@@ -37,9 +35,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
         ArrayList<Bill> bills = customerObj.getBills();
 
-        txtTotalAmount = findViewById(R.id.txtTotalAmount);
+        txtTotalAmount = findViewById(R.id.textViewTotalBill);
         imgAddButton = findViewById(R.id.imgAddBill);
-//        imgAddButton.setImageResource(R.drawable.ic_action_addbill);
+
 
         imgAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +47,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
             }
         });
 
-        //txtTotalAmount.setText(doubleFormatter(customerObj.getTotalAmount()));
-        //txtTotalAmount.setText(customerObj.getTotalAmount());
+        txtTotalAmount.setText(DollarSign.getInstance().doubleFormatter(customerObj.getTotalAmount()));
 
         ActionBar mActionBar = getSupportActionBar();
         mActionBar.hide();

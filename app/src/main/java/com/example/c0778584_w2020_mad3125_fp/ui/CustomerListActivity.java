@@ -1,6 +1,5 @@
 package com.example.c0778584_w2020_mad3125_fp.ui;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,9 +30,9 @@ public class CustomerListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
 
-        rvCustomers =findViewById(R.id.rv_cust_list);
+        rvCustomers =findViewById(R.id.rv_customer_list);
 
-        rvCustomers = findViewById(R.id.rv_cust_list);
+        rvCustomers = findViewById(R.id.rv_customer_list);
         populateCustomers();
 
         customerAdapter = new CustomerAdapter(customers);
