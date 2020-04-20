@@ -137,6 +137,10 @@ public class AddNewCustomerActivity extends AppCompatActivity {
             Flag = true;
             return;
         }
-//
+        if (edtBirthDateText.getText().toString().isEmpty()) {
+            edtBirthDateText.setError("Please enter your date of birth");
+            Flag = true;
+            return;
+        }
     }
 }
