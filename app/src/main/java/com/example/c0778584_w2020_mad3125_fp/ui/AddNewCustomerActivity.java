@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         edtLastNameText = findViewById(R.id.editTextLastName);
         edtBirthDateText = findViewById(R.id.editTextBirthdate);
         edtEmailText = findViewById(R.id.editTextEmail);
+
         rdBtnMale = findViewById(R.id.radioButtonMale);
         rdBtnFemale = findViewById(R.id.radioButtonMale);
         rdBtnOther = findViewById(R.id.radioButtonOther);
@@ -51,6 +53,8 @@ public class AddNewCustomerActivity extends AppCompatActivity {
 
         addDatePicker();
     }
+
+
     private void addDatePicker() {
         edtBirthDateText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +87,18 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                 edtBirthDateText.setText(date);
             }
         };
+
+
+        btnSave = findViewById(R.id.buttonSave);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(AddNewCustomerActivity.this, CustomerListActivity.class);
+                fieldIsEmpty();
+            }
+        });
     }
+
     public static String getMonthName(int monthNumber) {
         String[] monthNames = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
         return monthNames[monthNumber - 1];
@@ -101,5 +116,17 @@ public class AddNewCustomerActivity extends AppCompatActivity {
             return "Other";
         }
         return null;
+    }
+
+
+
+    private void fieldIsEmpty() {
+        boolean Flag = false;
+        if (edtCustomerIdText.getText().toString().isEmpty()) {
+            edtCustomerIdText.setError("Please enter your SIN");
+            Flag = true;
+            return;
+        }
+
     }
 }

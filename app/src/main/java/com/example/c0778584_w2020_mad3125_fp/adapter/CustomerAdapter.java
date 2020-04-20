@@ -36,11 +36,6 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
     public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
         Customer mCustomer = this.customersArrayList.get(position);
         holder.txtName.setText(mCustomer.getFull_name());
-//        holder.txtId.setText(mCustomer.getCustomerId());
-//        holder.txtEmail.setText(mCustomer.getEmail());
-//        holder.txtDob.setText(mCustomer.getDateOfBirth());
-//        holder.txtLocation.setText(mCustomer.getLocation());
-//        holder.txtGender.setText(mCustomer.getGender());
         holder.imgAttractions.setImageResource(mCustomer.getCustomerImg());
 
         holder.itemView.setOnClickListener(new View.OnClickListener()
@@ -70,12 +65,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
         public CustomerViewHolder(@NonNull View itemView) {
             super(itemView);
             this.txtName = itemView.findViewById(R.id.txt_customer_name);
-//            this.txtId = itemView.findViewById(R.id.txt_customer_id);
-//            this.txtEmail = itemView.findViewById(R.id.txt_customer_name);
-//            this.txtGender = itemView.findViewById(R.id.txt_customer_gender);
-//            this.txtDob = itemView.findViewById(R.id.txt_customer_dob);
-//            this.txtLocation = itemView.findViewById(R.id.txt_customer_location);
-
+            
             this.imgAttractions = itemView.findViewById(R.id.img_customer);
         }
     }
