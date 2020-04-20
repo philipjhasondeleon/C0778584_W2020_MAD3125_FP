@@ -14,8 +14,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import com.example.c0778584_w2020_mad3125_fp.R;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
+
 
 import java.util.Calendar;
 
@@ -66,7 +65,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener,
                         year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.GRAY));
                 dialog.show();
             }
         });
