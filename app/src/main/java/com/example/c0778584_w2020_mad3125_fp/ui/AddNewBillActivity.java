@@ -98,6 +98,10 @@ public class AddNewBillActivity extends AppCompatActivity {
             Flag = true;
             return;
         }
-//
-    }
+        if (edtBillType.getText().toString().isEmpty()) {
+            edtBillType.setError("Please enter Bill type");
+            Flag = true;
+            return;
+        }
+ }
 }
