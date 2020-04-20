@@ -134,7 +134,9 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="136dp"
+        android:drawableTop="@android:drawable/button_onoff_indicator_off"
+        android:drawableBottom="@android:drawable/button_onoff_indicator_off"
         android:fontFamily="casual"
         android:text="BILL DETAILS"
         android:textAlignment="center"
@@ -142,6 +144,8 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
