@@ -1,16 +1,23 @@
 package com.example.c0778584_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
 import com.example.c0778584_w2020_mad3125_fp.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Calendar;
 
 public class AddNewCustomerActivity extends AppCompatActivity {
 
@@ -22,7 +29,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
     private EditText edtLastNameText;
     private EditText edtBirthDateText;
     private EditText edtEmailText;
-    private Button btnAdd;
+    private Button btnSave;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     @Override
@@ -35,9 +42,51 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         edtLastNameText = findViewById(R.id.editTextLastName);
         edtBirthDateText = findViewById(R.id.editTextBirthdate);
         edtEmailText = findViewById(R.id.editTextEmail);
-        rdBtnMale = findViewById(R.id.);
-        rdBtnFemale = findViewById(R.id.rdBtnFemale);
-        rdBtnOther = findViewById(R.id.rdBtnOther);
-        btnAdd = findViewById(R.id.btnAdd);
+        rdBtnMale = findViewById(R.id.radioButtonMale);
+        rdBtnFemale = findViewById(R.id.radioButtonMale);
+        rdBtnOther = findViewById(R.id.radioButtonOther);
+        btnSave = findViewById(R.id.buttonSave);
+
+        ActionBar mActionBar = getSupportActionBar();
+        mActionBar.hide();
+
+        addDatePicker();
+    }
+    private void addDatePicker() {
+        edtBirthDateText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        AddNewCustomerActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                String date = "";
+                month = month + 1;
+                String monthName = getMonthName(month);
+                if (day < 10) {
+                    date = "0" + day + "/" + monthName + "/" + year;
+                } else {
+                    date = day + "/" + monthName + "/" + year;
+                }
+                edtBirthDateText.setText(date);
+            }
+        };
+    }
+    public static String getMonthName(int monthNumber) {
+        String[] monthNames = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
+        return monthNames[monthNumber - 1];
     }
 }
