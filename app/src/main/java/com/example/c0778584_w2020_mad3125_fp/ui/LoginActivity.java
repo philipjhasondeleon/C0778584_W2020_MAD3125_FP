@@ -56,8 +56,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (saveLoginCheckBox.isChecked())
             {
                 loginPrefsEditor.putBoolean("saveLogin", true);
-                loginPrefsEditor.putString("username", username);
-                loginPrefsEditor.putString("password", password);
+                loginPrefsEditor.putString("jhasondeleon", username);
+                loginPrefsEditor.putString("deleon123", password);
                 loginPrefsEditor.commit();
 
             } else
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
     public void goNext() {
-        if (editTextUsername.getText().toString().equals("asd") && (editTextPassword.getText().toString().equals("asd"))) {
+        if (editTextUsername.getText().toString().equals("jhasondeleon") && (editTextPassword.getText().toString().equals("deleon123"))) {
             startActivity(new Intent(LoginActivity.this, CustomerListActivity.class));
             LoginActivity.this.finish();
         }
