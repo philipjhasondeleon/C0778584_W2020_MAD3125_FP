@@ -23,6 +23,7 @@ public class AddNewBillActivity extends AppCompatActivity {
     private EditText edtBillIdText;
     private EditText edtBillDateText;
     private EditText edtBillType;
+    private EditText edtTotalAmount;
     private Button btnSaveBill;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
@@ -35,6 +36,7 @@ public class AddNewBillActivity extends AppCompatActivity {
         edtBillIdText = findViewById(R.id.editTextBillID);
         edtBillDateText = findViewById(R.id.editTextBillDate);
         edtBillType = findViewById(R.id.editTextBillType);
+        edtTotalAmount = findViewById(R.id.editTextBillAmount);
         btnSaveBill = findViewById(R.id.buttonSaveBill);
 
         addDatePicker();
@@ -103,5 +105,10 @@ public class AddNewBillActivity extends AppCompatActivity {
             Flag = true;
             return;
         }
- }
+        if (edtTotalAmount.getText().toString().isEmpty()) {
+            edtTotalAmount.setError("Please enter Amount");
+            Flag = true;
+            return;
+        }
+    }
 }
