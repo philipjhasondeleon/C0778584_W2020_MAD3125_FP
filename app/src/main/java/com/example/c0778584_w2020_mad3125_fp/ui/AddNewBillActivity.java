@@ -93,6 +93,11 @@ public class AddNewBillActivity extends AppCompatActivity {
             Flag = true;
             return;
         }
+        if (edtBillDateText.getText().toString().isEmpty()) {
+            edtBillDateText.setError("Please enter Bill Date");
+            Flag = true;
+            return;
+        }
 //
     }
 }
