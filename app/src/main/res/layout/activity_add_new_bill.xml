@@ -10,7 +10,7 @@
         android:id="@+id/editText"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="120dp"
         android:ems="10"
         android:hint="Enter Bill ID"
         android:inputType="textPersonName"
@@ -22,7 +22,7 @@
         android:id="@+id/editText2"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Enter Bill Date"
         android:inputType="textPersonName"
@@ -34,7 +34,7 @@
         android:id="@+id/editText3"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Enter Bill Type"
         android:inputType="textPersonName"
@@ -46,11 +46,35 @@
         android:id="@+id/editText4"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Enter Bill Total Amount"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="New Bill"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="135dp"
+        android:text="SAVE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
