@@ -132,6 +132,11 @@ public class AddNewCustomerActivity extends AppCompatActivity {
             Flag = true;
             return;
         }
-
+        if (edtLastNameText.getText().toString().isEmpty()) {
+            edtLastNameText.setError("Please enter your Last Name");
+            Flag = true;
+            return;
+        }
+//
     }
 }
