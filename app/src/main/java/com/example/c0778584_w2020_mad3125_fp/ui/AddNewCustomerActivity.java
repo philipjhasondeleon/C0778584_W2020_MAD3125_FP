@@ -88,4 +88,18 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         String[] monthNames = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
         return monthNames[monthNumber - 1];
     }
+    public String getGender()
+    {
+        if (rdBtnMale.isChecked()){
+            return "Male";
+        }
+        else if (rdBtnFemale.isChecked()) {
+            return "Female";
+        }
+        else if(rdBtnOther.isChecked())
+        {
+            return "Other";
+        }
+        return null;
+    }
 }
