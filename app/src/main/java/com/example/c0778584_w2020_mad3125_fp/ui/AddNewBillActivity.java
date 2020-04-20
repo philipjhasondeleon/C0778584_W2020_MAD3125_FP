@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ public class AddNewBillActivity extends AppCompatActivity {
 
     private EditText edtBillIdText;
     private EditText edtBillDateText;
+    private EditText edtBillType;
     private Button btnSaveBill;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
@@ -32,6 +34,7 @@ public class AddNewBillActivity extends AppCompatActivity {
 
         edtBillIdText = findViewById(R.id.editTextBillID);
         edtBillDateText = findViewById(R.id.editTextBillDate);
+        edtBillType = findViewById(R.id.editTextBillType);
         btnSaveBill = findViewById(R.id.buttonSaveBill);
 
         addDatePicker();
@@ -68,9 +71,28 @@ public class AddNewBillActivity extends AppCompatActivity {
                 edtBillDateText.setText(date);
             }
         };
+
+        btnSaveBill = findViewById(R.id.buttonSaveBill);
+        btnSaveBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(AddNewBillActivity.this, ShowBillDetailsActivity.class);
+                fieldIsEmpty();
+            }
+        });
+
     }
     public static String getMonthName(int monthNumber) {
         String[] monthNames = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
         return monthNames[monthNumber - 1];
+    }
+    private void fieldIsEmpty() {
+        boolean Flag = false;
+        if (edtBillIdText.getText().toString().isEmpty()) {
+            edtBillIdText.setError("Please enter Bill ID");
+            Flag = true;
+            return;
+        }
+//
     }
 }
