@@ -70,7 +70,7 @@ public class BillFragment extends Fragment {
             if(bills.get(i).getBillType().equals(Bill.BillType.Mobile))
             {
                 txtBillId.setText(bills.get(i).getBillId());
-                imgBillType.setImageResource(R.drawable.bills_logo);
+                imgBillType.setImageResource(R.drawable.mobile);
                 txtBillAmount.setText(DollarSign.getInstance().doubleFormatter(bills.get(i).billCalculate()));
                 txtBillDate.setText(bills.get(i).getBillDate().toString());
             }
@@ -78,7 +78,7 @@ public class BillFragment extends Fragment {
             if(bills.get(i).getBillType().equals(Bill.BillType.Hydro))
             {
                 txtBillId.setText(bills.get(i).getBillId());
-                imgBillType.setImageResource(R.drawable.bills_logo);
+                imgBillType.setImageResource(R.drawable.hydro);
                 txtBillAmount.setText(DollarSign.getInstance().doubleFormatter(bills.get(i).billCalculate()));
                 txtBillDate.setText(bills.get(i).getBillDate().toString());
             }
@@ -86,7 +86,7 @@ public class BillFragment extends Fragment {
             if(bills.get(i).getBillType().equals(Bill.BillType.Internet))
             {
                 txtBillId.setText(bills.get(i).getBillId());
-                imgBillType.setImageResource(R.drawable.bills_logo);
+                imgBillType.setImageResource(R.drawable.internet);
                 txtBillAmount.setText(DollarSign.getInstance().doubleFormatter(bills.get(i).billCalculate()));
                 txtBillDate.setText(bills.get(i).getBillDate().toString());
             }

@@ -24,6 +24,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     FragmentTransaction mFragmentTransaction;
     private TextView txtTotalAmount;
     private ImageView imgAddButton;
+    private TextView txtNameCustomer;
+    private TextView txtId;
+    private TextView txtEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
         txtTotalAmount = findViewById(R.id.textViewTotalBill);
         imgAddButton = findViewById(R.id.imgAddBill);
+        txtNameCustomer = findViewById(R.id.textViewCustName);
+        txtId = findViewById(R.id.textViewCustID);
+        txtEmail = findViewById(R.id.textViewCustEmail);
 
 
         imgAddButton.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +53,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
             }
         });
 
+        txtNameCustomer.setText(customerObj.getFirstName());
+        txtId.setText(customerObj.getCustomerId());
+        txtEmail.setText(customerObj.getEmail());
         txtTotalAmount.setText(DollarSign.getInstance().doubleFormatter(customerObj.getTotalAmount()));
 
         ActionBar mActionBar = getSupportActionBar();
