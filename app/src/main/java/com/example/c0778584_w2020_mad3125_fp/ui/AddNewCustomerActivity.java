@@ -123,7 +123,12 @@ public class AddNewCustomerActivity extends AppCompatActivity {
     private void fieldIsEmpty() {
         boolean Flag = false;
         if (edtCustomerIdText.getText().toString().isEmpty()) {
-            edtCustomerIdText.setError("Please enter your SIN");
+            edtCustomerIdText.setError("Please enter Customer ID");
+            Flag = true;
+            return;
+        }
+        if (edtFirstNameText.getText().toString().isEmpty()) {
+            edtFirstNameText.setError("Please enter your first name");
             Flag = true;
             return;
         }
